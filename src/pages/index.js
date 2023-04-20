@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import { SignIn, useAuth } from "@clerk/nextjs";
+import { SignIn, SignedOut, useAuth } from "@clerk/nextjs";
 import { useEffect } from "react";
 import { useRouter } from "next/router";
 
@@ -26,7 +26,9 @@ export default function Home() {
       </Head>
       <main>
         <h1>Runqiu's To-do App</h1>
-        <SignIn redirectUrl="/todo"></SignIn>
+        <SignedOut>
+          <SignIn redirectUrl="/todo"></SignIn>
+        </SignedOut>
       </main>
     </>
   )
