@@ -9,7 +9,7 @@ Instructions can be [found on canvas](https://canvas.umn.edu/courses/355584/page
 
 ## Link to Site
 
-[On Netlify](euphonious-capybara-8c7cad.netlify.app)
+https://euphonious-capybara-8c7cad.netlify.app
 
 ## Challenge Task
 
