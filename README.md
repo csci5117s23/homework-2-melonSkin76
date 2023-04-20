@@ -3,18 +3,15 @@
 
 Instructions can be [found on canvas](https://canvas.umn.edu/courses/355584/pages/homework-2)
 
-Please fill out all of the following sections to help us grade your submission:
+## Student
 
-## Student (to be completed individually)
-
-* First Last, x500@umn.edu
+* Runqiu Guo, guo00370@umn.edu
 
 ## Link to Site
 
-<https://TODO.com/>
+euphonious-capybara-8c7cad.netlify.app
 
 ## Challenge Task
 
-* I started the challenge task: [yes/no]
-* I completed the challenge task: [yes/no]
-
+* I started the challenge task: yes
+* I completed the challenge task: no
