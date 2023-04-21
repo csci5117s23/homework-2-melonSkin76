@@ -2,17 +2,21 @@ import { updateTodoItem } from '@/modules/Data';
 import React, { useState } from 'react';
 import { useAuth } from '@clerk/nextjs';
 
-export function TodoDetails({todoItem}){
+export function TodoDetails({todoItem, refresh}){
     const { getToken } = useAuth();
     const [isDone, setIsDone] = useState(todoItem.isDone);
     const [todoItemText, setTodoItemText] = useState(todoItem.todoItem);
 
     async function editText(){
+        console.log("Editing text...")
+
         const authToken = await getToken({ template: "codehooks" });
 
         // update todoItemText for backend
         todoItem.todoItem = todoItemText;
         await updateTodoItem(authToken, todoItem);
+
+        refresh(todoItemText)
     }
 
     async function toggleIsDone(){
@@ -31,9 +35,12 @@ export function TodoDetails({todoItem}){
         return(
             <>
                 <div>
-                    <input value={todoItemText} onChange={e => setTodoItemText(e.target.value)}></input>
-                    <button onClick={editText}>Save</button>
-                    <button onClick={toggleIsDone}>Mark as Not Done</button>
+                    <h2 id="detailsContent" className="idTitle">To-do Item: { todoItem.todoItem }</h2>
+                    <textarea className='saveInput' cols="100" rows="10" value={todoItemText} onChange={e => setTodoItemText(e.target.value)}></textarea>
+                    <div className='detailsGroup'>
+                        <button className='saveButton' onClick={editText}>Save</button>
+                        <button className='buttonMark buttonMarkN' onClick={toggleIsDone}>Mark as Not Done</button>
+                    </div>
                 </div>
             </>
         );
@@ -41,9 +48,12 @@ export function TodoDetails({todoItem}){
         return(
             <>
                 <div>
-                    <input value={todoItemText} onChange={e => setTodoItemText(e.target.value)}></input>
-                    <button onClick={editText}>Save</button>
-                    <button onClick={toggleIsDone}>Mark as Done</button>
+                    <h2 id="detailsContent" className="idTitle">To-do Item: { todoItem.todoItem }</h2>
+                    <textarea className='saveInput' cols="100" rows="10" value={todoItemText} onChange={e => setTodoItemText(e.target.value)}></textarea>
+                    <div className='detailsGroup'>
+                        <button className='saveButton' onClick={editText}>Save</button>
+                        <button className='buttonMark buttonMarkY' onClick={toggleIsDone}>Mark as Done</button>
+                    </div>
                 </div>
             </>
         );

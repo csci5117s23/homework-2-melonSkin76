@@ -5,7 +5,7 @@ export default function My404(){
         <>
             <div>
                 <h1>404 Not Found</h1>
-                <Link href='/todo'>Go Back to Todo</Link>
+                <Link className="doneLinkId" href='/todo'>Go Back to Todo</Link>
             </div>
         </>
     );

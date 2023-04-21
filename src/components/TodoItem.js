@@ -23,12 +23,14 @@ export function TodoItem({todoItem, refresh}){
     }
 
     const itemRelUrl = '/todo/' + todoItem._id;
-    if (todoItem.isdone) {
+    if (isDone) {
         return(
             <>
                 <div>
-                    <Link href={ itemRelUrl }>{ todoItem.todoItem }</Link>
-                    <button onClick={ toggleIsDone }>Mark as Not Done</button>
+                    <Link className='contentPreview' href={ itemRelUrl }>{ todoItem.todoItem }</Link>
+                    <div className='doneButton'>
+                        <button className='buttonMark buttonMarkN' onClick={ toggleIsDone }>Mark as Not Done</button>
+                    </div>
                 </div>
             </>
         );
@@ -37,8 +39,10 @@ export function TodoItem({todoItem, refresh}){
         return(
             <>
                 <div>
-                    <Link href={ itemRelUrl }>{ todoItem.todoItem }</Link>
-                    <button onClick={ toggleIsDone }>Mark as Done</button>
+                    <Link className='contentPreview' href={ itemRelUrl }>{ todoItem.todoItem }</Link>
+                    <div className='doneButton'>
+                        <button className='buttonMark buttonMarkY' onClick={ toggleIsDone }>Mark as Done</button>
+                    </div>
                 </div>
             </>
         );
